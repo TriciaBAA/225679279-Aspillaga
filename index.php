@@ -99,7 +99,7 @@
     ?>
     <ol>
     <?php
-    $fav_movies =  array("Flipped", "Dinner in America", "Mean Girls", "Spirited Away", "10 Reasons Why I Hate You");
+    $fav_movies =  array("Flipped", "Dinner in America", "Mean Girls", "Spirited Away", "10 Things I Hate About You");
 
     foreach ($fav_movies as $movie) {
         echo "<li>" .$movie ."</li>";
@@ -113,8 +113,123 @@
     <?php
     echo "Activity 7: Key-Value Pairs with foreach";
     echo "<br>";
+
+    $student = array(
+        "Name" => "Alice",
+        "Age" => 20,
+        "Grade" => "A",
+        "City" => "Baguio"
+    );
+    foreach ($student as $key => $value) {
+        echo "$key: $value";
+        echo "<br>";
+    }
     ?>
 
+    <br><br>
+
+    <!--NUMBER 8-->
+    <?php
+     echo "Activity 8: Factorial Calculator";
+     echo "<br>";
+
+     $number = 5;
+    $factorial = 1;
+
+    for ($i = $number; $i > 1; $i--) {
+        $factorial *= $i;
+    }
+    echo "Factorial of $number is: $factorial\n";
+    ?>
+
+    <br><br>
+
+    <!--NUMBER 9-->
+    <?php
+     echo "Activity 9: FizzBuzz Challenge";
+     echo "<br>";
+
+     for ($i = 1; $i <= 50; $i++) {
+        if ($i % 3 == 0 && $i % 5 == 0) {
+            echo "FizzBuzz ";
+        }
+        elseif ($i % 3 == 0) {
+            echo "Fizz ";
+        }
+        elseif ($i % 5 == 0) {
+            echo "Buzz ";
+        }
+        else {
+            echo "$i ";
+        }
+    }
+    ?>
+
+    <br><br>
+
+    <!--NUMBER 10-->
+    <?php
+     echo "Activity 10: Prime Number Checker";
+     echo "<br>";
+
+     function isPrime($number) {
+        if ($number < 2) {
+            return false;
+        }
+        for ($i = 2; $i <= sqrt($number); $i++) {
+            if ($number % $i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+    $number = 17;
+    
+    if (isPrime($number)) {
+        echo "$number is a prime number. ";
+    } else {
+        echo "$number is not a prime number. ";
+    }
+    ?>
+
+    <br><br>
+
+    <?php
+    echo "Activity 11: Fibonacci Sequence";
+    echo "<br>";
+
+    $first = 0;
+    $second = 1;
+    $count = 10;
+
+    $fibonacci = array($first, $second);
+
+    while (count($fibonacci) < $count) {
+        $next = $first + $second;
+        $fibonacci[] = $next;
+        $first = $second;
+        $second = $next;
+    }
+    echo implode(" ", $fibonacci) . "\n";
+    ?>
+
+    <br><br>
+
+    <!--NUMBER 12-->
+    <?php
+     echo "Activity 12: Reverse a String";
+     echo "<br>";
+
+     $inputString = "Hello";
+    $reversedString = "";
+
+    for ($i = strlen($inputString) - 1; $i >= 0; $i--) {
+        $reversedString .= $inputString[$i];
+    }
+    echo "Input: \"$inputString\"";
+    echo "<br>";
+    echo "Output: \"$reversedString\"";
+     ?>
 
 </body>
 </html>
