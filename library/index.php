@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+include 'db.php';
 
 // Fetch all books
 $stmt = $conn->query("SELECT * FROM books");
@@ -15,7 +15,7 @@ $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <h1>Library Management</h1>
 
     <!-- Add New Book Form -->
-    <form action="create.php" method="post">
+    <form action="add.php" method="post">
         <input type="text" name="title" placeholder="Book Title" required>
         <input type="text" name="author" placeholder="Author" required>
         <input type="text" name="genre" placeholder="Genre">
